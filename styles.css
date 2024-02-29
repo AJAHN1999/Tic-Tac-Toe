@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+body{
+    font-weight: 600;
+    font-family:'Outfit','Sans-Serif';
+}
+
+:root{
+    --main-color:rgb(7, 59, 76);
+    --headin-color:rgb(159, 238, 217);
+    --button-color:rgb(255, 209, 102);
+    --xo-color:rgb(241, 112, 142);
+    --fonts:'Outfit','Sans-Serif';
+}
+
+.mainContainer {
+    background-color: var(--main-color);
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 20% 70% 10%; /* Adjust the row heights as needed */
+}
+
+.heading {
+    box-shadow: 0px 15px 10px -15px #111;  
+    color:var(--xo-color);
+    font-size: 3em;
+    background-color: var(--headin-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.grid {
+    height: 50%;
+    width: 20%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    /* margin-bottom: 100px; */
+}
+
+.main__summary-section {
+    display: grid;
+    width: 100%;
+    gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 50px;
+    width: 90%;
+}
+
+
+#cell{
+    
+    box-shadow: 0px 15px 10px -15px #111;  
+    background-color: var(--button-color);
+    border-radius: 8px;
+    width: 100px;
+    height: 100px; /* Adjust the height as needed */
+    font-size: 54px; /* Adjust the font size as needed */
+    border: none;
+    font-family: var(--fonts);
+    color: var(--xo-color);
+    font-weight: 800;
+
+}
+#cell:hover{
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc; /* Just for visibility */
+}
+
+.status{
+    height: 100px;
+    width: 400px;
+    background-color: var(--xo-color);
+    box-shadow: 0px 15px 10px -15px #111; 
+    border-radius: 10px;
+    text-align: center;
+    color:var(--main-color);
+    font-family: var(--fonts);
+    font-weight: 700;
+    font-size: 1.5rem;
+
+}
+
