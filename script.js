@@ -81,7 +81,7 @@ const gameBoard = function () {
 const gameController = (function (p1N, p2N) {
 
     const winningCombinations = [
-        [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 4], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]
     ];
 
 
@@ -123,6 +123,9 @@ const gameController = (function (p1N, p2N) {
                 console.log(`${activePlayer.name} won the game`);
                 return activePlayer.token;
             }
+            else if(resultOfRound===false&&activePlayer.choices.length===5){
+                return "tie";
+            }
             setCurrentPlayer();
         }
         else {
@@ -159,20 +162,33 @@ const gameController = (function (p1N, p2N) {
 const buttonFunction = function (){
     const buttons = document.querySelectorAll("#cell");
     const status = document.querySelector(".content .status p")
+    const restart = document.querySelector(".restart");
     buttons.forEach((button)=>{
         button.addEventListener("click",(evt)=>{
-            evt.target.textContent = gameController.getCurrentPlayer().token;
+            if(evt.target.textContent===""){
+                evt.target.textContent = gameController.getCurrentPlayer().token;
+            }
+            
             const winner = gameController.playRound(JSON.parse(evt.target.value),gameController.getCurrentPlayer());
-            if(winner!==undefined){
+            if(winner==="tie"){
+                status.textContent="It's a tie!";
+            }
+            else if(winner!==undefined){
                 status.textContent=`${winner} has won the game!`;
+                
             }  
             else{
                 status.textContent=`${gameController.getCurrentPlayer().token}'s turn!`
             }   
-        });
-        
+        });  
+    })
+    restart.addEventListener("click",()=>
+    {
+       location.reload();
     })
 }();
+
+
 
 
 

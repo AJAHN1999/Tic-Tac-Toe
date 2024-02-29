@@ -75,7 +75,7 @@ body{
     background-color: #ccc; /* Just for visibility */
 }
 
-.status{
+.status {
     height: 100px;
     width: 400px;
     background-color: var(--xo-color);
@@ -87,5 +87,16 @@ body{
     font-weight: 700;
     font-size: 1.5rem;
 
+}
+
+.restart{
+    background-color: var(--xo-color);
+    box-shadow: 0px 15px 10px -15px #111; 
+    border-radius: 10px;
+    text-align: center;
+    color:var(--main-color);
+    font-family: var(--fonts);
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
